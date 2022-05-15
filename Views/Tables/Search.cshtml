@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Search";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+</head>
+<body>
+     <h1>Search</h1>
+
+     <form asp-controller="Tables" asp-action="Index">
+    <p>
+        <input type="text" name="SearchString" class="form-control" placeholder="Search by name"/>
+        <input style="margin-top:5px;color:white;font-weight:bold;" type="submit" class="btn btn-outline-dark" value="Search" />
+    </p>
+    </form>
+  
+</body>
+</html>
+
+

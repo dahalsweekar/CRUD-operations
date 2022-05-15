@@ -1,0 +1,85 @@
+﻿@model SQL.Models.Table
+
+@{
+    ViewData["Title"] = "Create";
+}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+
+   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+<style>
+
+    #top{
+        display:flex;
+        justify-content:center;
+        color:white;
+        font-weight:bold;
+    }
+
+    #body{
+    display:flex;
+    justify-content:center; 
+    margin-top:10px
+    }
+
+     .ui-menu-item{
+        background-color:black;
+        color:white;
+    }
+
+</style>
+
+<div class="row" id="top"><h3 class="col-3">Add new records</h3></div>
+
+<div class="container" id="body">    
+<div class="row" style="background-color:black"><span class="border-top-0"></span>
+    <div class="col-md-12" style="color:white;font-weight:bold">
+        <form asp-action="Create" class="needs-validation" novalidate>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" style="margin-top:5px">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" placeholder="Fullname" required/>
+                <span asp-validation-for="Name" class="text-danger"></span>
+                <div class="valid-feedback">
+                    Perfect!
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" id="address" placeholder="District" required/>
+                <span asp-validation-for="Address" class="text-danger"></span>
+                 <div class="valid-feedback">
+                    Perfect!
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" placeholder="example@gmail.com" required/>
+                <span asp-validation-for="Email" class="text-danger"></span>
+                 <div class="valid-feedback">
+                    Perfect!
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contact" class="control-label"></label>
+                <input asp-for="Contact" class="form-control" placeholder="+977" required/>
+                <span asp-validation-for="Contact" class="text-danger"></span>
+                 <div class="valid-feedback">
+                    Perfect!
+                </div>
+            </div>
+            <div class="form-group" style="margin-top:5px;margin-bottom:10px;">
+                <button type="submit" value="Create" class="btn btn-outline-dark" style="color:white;font-weight:bold"><i class="bi bi-file-plus"></i>Create</button>
+                 <a class="btn btn-outline-dark" style="color:white;font-weight:bold" asp-action="Index"><i class="bi bi-caret-left"></i>Back to List</a>
+            </div>
+        </form>
+     </div>
+   </div>
+</div>
+
+<script src="/js/autoComplete.js"></script>
+<script src="/js/validate.js"></script>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

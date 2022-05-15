@@ -1,0 +1,57 @@
+﻿@model SQL.Models.Table
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<style>
+    #body{
+        display:flex;
+        justify-content:center; 
+        margin-top:10px;
+        background-color:black;
+        color:white;
+        }
+</style>
+
+<h3>Delete</h3>
+
+<div>
+  <div class="container" id="body"> 
+    <dl class="row" style="margin-top:10px">
+        <dt class = "col-sm-2" id="text">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Contact)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Contact)
+        </dd>
+       
+        <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <button type="submit" value="Delete" class="btn btn-outline-dark" style="color:white;font-weight:bold"><i class="bi bi-trash"></i>Delete</button>
+         <a style="color:white;font-weight:bold" id="a" class="btn btn-outline-dark"asp-action="Index"><i class="bi bi-caret-left"></i>Back to List</a>
+    </form>
+    
+    </dl>
+    
+    </div>
+    
+</div>
